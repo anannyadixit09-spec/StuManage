@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuManage | Courses</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body data-page="courses">
+    <header class="siteheader">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Stumanage" height="100"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="study-tracker.html">Study Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page_heading">
+            <p class="light">SUBJECT MANAGEMENT</p>
+            <h1>Courses</h1>
+            <p>Create courses and assign to students.</p>
+        </section>
+
+        <section class="form">
+            <div class="form_title">
+                <h2 id="courseformheading">Add a Course</h2>
+                <p>A course can be assign to multiple sutent and a student can be assigned to multiple courses.</p>
+            </div>
+
+            <form id="courseform" class="form_grid">
+                <input type="hidden" id="courseId">
+                <label>Course name: *
+                    <input id="courseName" type="text" maxlength="80" required placeholder="e.g. Python Programming">
+                </label>
+
+                <label>Course code: *
+                    <input id="courseCode" type="text" maxlength="30" required placeholder="e.g. INT108">
+                </label>
+
+                <label>Semester:
+                    <input id="courseSemester" type="text" maxlength="30" placeholder="e.g. Semester 2">
+                </label>
+
+                <label class="full-width">Assign students:(optional)
+                    <select id="courseStudents" multiple size="5" aria-describedby="courseStudentHelp">
+                    </select>
+                </label>
+                <div class="form-actions full-width">
+                    <button class="button primary" type="submit" id="saveCourseButton">Add
+                        Course</button>
+                    <button class="button secondary" type="button" id="cancelCourseEdit" hidden>Cancel
+                        edit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel_section">
+            <div class="form_title">
+                <div>
+                    <h2>All Courses</h2>
+                    <p>Courses are used to organize attendance records.</p>
+                </div>
+                <span class="count_pill" id="coursecount">0 courses</span>
+            </div>
+
+            <div class="table_wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th> Course Code</th>
+                            <th>Semester</th>
+                            <th>Assigned students</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseRows"></tbody>
+                </table>
+            </div>
+
+            <p id="courseempty" class="empty-state">No courses added till no. Add at least one course from above form to start tracking attendance.</p>
+        </section>
+    </main>
+
+    <footer>
+         <p>&copy; 2026 Stumanage. All rights reserved.</p>
+         <p>Student Attendance & Study Tracker Project</p>
+    </footer>
+</body>
+
+</html>

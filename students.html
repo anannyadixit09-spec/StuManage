@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuManage | Students</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js?v=student-details-fix" defer></script>
+
+</head>
+
+<body data-page="students">
+
+    <header class="siteheader">
+
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Stumanage" height="100"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="study-tracker.html">Study Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="page_heading">
+            <p class="light">STUDENT DIRECTORY</p>
+            <h1>Students</h1>
+            <p>Add and manage students, and note their attendence and study progress</p>
+        </section>
+
+        <section class="form" id="student_form">
+            <div class="form_title">
+                <h2 id="studentformheading">Add a Student</h2>
+                <p>Fields marked with * are required.</p>
+            </div>
+
+            <form id="studentForm" class="form_grid">
+
+                <input type="hidden" id="studentId">
+
+                <label>Full name: *
+                    <input id="studentName" name="studentName" type="text" maxlength="80" required
+                        placeholder="e.g. Ananya Dixit">
+                </label>
+
+                <label>Roll number: *
+                    <input id="studentRoll" name="studentRoll" type="text" maxlength="30" required
+                        placeholder="e.g. 52">
+                </label>
+
+                <label>Email: (optional)
+                    <input id="studentEmail" name="studentEmail" type="email" maxlength="100"
+                        placeholder="student@example.com">
+                </label>
+
+                <label>Semester: *
+                    <input id="studentSemester" name="studentSemester" type="text" maxlength="30" required
+                        placeholder="e.g. Semester 2">
+                </label>
+
+                <div class="form_actions full_width">
+                    <button class="button primary" type="submit" id="saveStudentButton">Add
+                        Student</button>
+                    <button class="button secondary" type="button" id="cancelStudentEdit" hidden>Cancel
+                        edit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel_section">
+            <div form_title>
+                <div>
+                    <h2>All Students</h2>
+                    <p>Use search to find a student by name or roll number. Click on <strong>Student's Name</strong> to see that student detail.</p>
+                </div>
+                <span class="count_pill" id="studentcount">0 Students</span>
+            </div>
+
+            <label class="search_label">Search Students
+                <input type="search" id="studentsearch" placeholder="Search Name or Roll Number...">
+            </label>
+
+            <div class="table_wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll number</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentRows"></tbody>
+                </table>
+            </div>
+
+            <p id="studentempty" class="empty-state">No student added yet please fill the form above to enter your first student.</p>
+        </section>
+    </main>
+
+    <footer>  
+        <p>&copy; 2026 Stumanage. All rights reserved.</p>
+        <p>Student Attendance & Study Tracker Project</p>
+    </footer>
+</body>
+
+</html>

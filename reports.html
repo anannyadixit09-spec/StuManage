@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuManage | Reports</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body data-page="reports">
+    <header class="siteheader">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Stumanage" height="100"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="study-tracker.html">Study Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page_heading">
+            <p class="light">PROGRESS & RECORDS</p>
+            <h1>Reports</h1>
+            <p>Review attendance by student name and identify records below minimum target.</p>
+        </section>
+
+        <section class="panel_report">
+            <div>
+                <h2>Attendance Report</h2>
+                <p>Current minimum requirement:
+                    <strong id="reportTarget">75%</strong>
+                </p>
+            </div>
+        </section>
+
+        <section class="panel_section">
+            <div class="form_title">
+                <div>
+                    <h2>All Attendance Records</h2>
+                    <p>Percentages are calculated using attended classes divided by total classes.</p>
+                </div>
+                <span class="count_pill" id="reportrecordcount">0 Records</span>
+            </div>
+
+            <div class="table_wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Roll number</th>
+                            <th>Course</th>
+                            <th>Total</th>
+                            <th>Attended</th>
+                            <th>Missed</th>
+                            <th>Attendance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportRows"></tbody>
+                </table>
+            </div>
+            <p id="reportempty" class="empty-state">There are no attendance records to report yet.</p>
+        </section>
+
+        <section class="panel_section" id="low_attendance">
+            <div class="form_title">
+                <p>Each student-course record below the minimum attendance is listed separately.</p>
+            </div>
+
+            <div id="lowAttendanceReport" class="warning-list empty-state">No low-attendance warnings.</div>
+        </section>
+    </main>
+
+      <footer>
+         <p>&copy; 2026 Stumanage. All rights reserved.</p>
+         <p>Student Attendance & Study Tracker Project</p>
+    </footer>
+</body>
+
+</html>

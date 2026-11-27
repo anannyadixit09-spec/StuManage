@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuManage | Study Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body data-page="study-tracker">
+    <header class="siteheader">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Stumanage" height="100"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="study-tracker.html">Study Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page_heading">
+            <p class="light">BUILD CONSISTENT HABITS</p>
+            <h1>Study Tracker</h1>
+            <p>Record study time and keep track of tasks or goals you want to complete.</p>
+        </section>
+
+        <section class="tackerboxes">
+            <article class="trackercard">
+                <span class="trackericon">⌛</span>
+                <p>Total Study Time</p>
+                <strong id="totalstudyhours">0 hrs</strong><small>All sessions total time</small>
+            </article>
+
+            <article class="trackercard">
+                <span class="trackericon">✅</span>
+                <p>Completed tasks</p><strong id="completedtasks">0</strong><small>Tasks marked as complete</small>
+            </article>
+
+            <article class="trackercard">
+                <span class="trackericon">⚠️</span>
+                <p>Pending tasks</p><strong id="pendingtasks">0</strong><small>Tasks still to do</small>
+            </article>
+        </section>
+
+        <section class="form">
+            <div class="form_title">
+                <div>
+                    <h2>Log a Study Session</h2>
+                    <p>Enter the time spent studying.</p>
+                </div>
+            </div>
+
+            <form id="studyform" class="form_grid">
+                <label>Date: *
+                    <input type="date" id="studyDate" required>
+                </label>
+
+                <label>Subject / course: *
+                    <input type="text" id="studySubject" required maxlength="80" placeholder="e.g. Python programming">
+                </label>
+                <label>Study duration (minutes): *
+                    <input type="number" id="studyMinutes" required min="1" max="1440" step="1" placeholder="e.g. 60">
+                </label>
+
+                <label>Task or goal: (optional)
+                    <input type="text" id="studyTask" maxlength="160" placeholder="e.g. Complete loops exercises">
+                </label>
+
+                <label class="checkbox-label full-width">
+                    <input type="checkbox" id="studyTaskComplete"> Mark this task
+                    as completed
+                </label>
+
+                <div class="form-actions full-width">
+                    <button class="button primary" type="submit">Save Study Session
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel_section">
+            <div class="form_title">
+                <div>
+                    <h2>Study Sessions &amp; Tasks</h2>
+                    <p>Mark a task complete or remove a session when needed.</p>
+                </div>
+                <span class="count_pill" id="studyrecordcount">0 Records</span>
+            </div>
+
+            <div class="table_wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Subject / Course</th>
+                            <th>Duration</th>
+                            <th>Task / goal</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studyRows"></tbody>
+                </table>
+            </div>
+
+            <p id="studyempty" class="empty-state">No study sessions logged till now. Add your first session by filling the form above.</p>
+        </section>
+    </main>
+
+    <footer>
+         <p>&copy; 2026 Stumanage. All rights reserved.</p>
+         <p>Student Attendance & Study Tracker Project</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuManage | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body data-page="dashboard">
+    <header class="siteheader">
+
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Stumanage" height="100"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="study-tracker.html">Study Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="light">STUDENTS ACADEMIC OVERVIEW</p>
+                <h1>Welcome to StuManage 🙌</h1>
+                <p>Mange student attendence and track study progress in one place.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="overview">
+            <div class="section_heading">
+                <p class="light">AT A GLANCE</p>
+                <h2 id="overview">Dashboard Overview</h2>
+            </div>
+
+            <div class="overviewgrid">
+                <article class="overviewcard"><span class="overviewicon">🧑🏻‍🎓</span>
+                    <p>Total Students</p>
+                    <strong id="totalstudent">0</strong>
+                    <a href="students.html">Manage Students==></a>
+                </article>
+
+                <article class="overviewcard"><span class="overviewicon">🧾</span>
+                    <p>Total Courses</p>
+                    <strong id="totalcourse">0</strong>
+                    <a href="courses.html">Manage Courses==></a>
+                </article>
+
+                <article class="overviewcard"><span class="overviewicon">🫆</span>
+                    <p>Average Attendance</p>
+                    <strong id="avgattendance">0%</strong>
+                    <a href="reports.html">View Reports==></a>
+                </article>
+
+                <article class="overviewcard"><span class="overviewicon">❗</span>
+                    <p>Low Attendance Students</p>
+                    <strong id="lowattendance">0</strong>
+                    <a href="reports.html#low_attendence">Review Warnings==></a>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="quick_action">
+            <div class="section_heading">
+                <p class="light">GET STARTED</p>
+                <h2>Quick Actions</h2>
+            </div>
+
+            <div class="quickgrid">
+                <a class="action_card" href="students.html#student-form">
+                    <span class="actionicon">➕</span>
+                    <span><strong>Add Student</strong><small>Register a student</small></span>
+                    <span class="action-arrow">==></span>
+                </a>
+
+                <a class="action_card" href="attendance.html">
+                    <span class="actionicon">✔️</span>
+                    <span><strong>Manage Attendance</strong><small>Update class counts</small></span>
+                    <span class="action-arrow">==></span>
+                </a>
+
+                <a class="action_card" href="study-tracker.html">
+                    <span class="actionicon">🕰️</span>
+                    <span><strong>Log Study Hours</strong><small>Record a study session</small></span>
+                    <span class="action-arrow">==></span>
+                </a>
+
+                <a class="action_card" href="reports.html">
+                    <span class="actionicon">📋</span>
+                    <span><strong>View Reports</strong><small>Review attendance data</small></span>
+                    <span class="action-arrow">==></span>
+                </a>
+            </div>
+        </section>
+
+        <div class="twocolumn panelsection">
+            <section class="panel" aria-labelledby="alerts">
+                <div class="panelrow">
+                    <div>
+                        <p class="light">NEEDS ATTENTION</p>
+                        <h2 class="alertheading">Attendance Alerts</h2>
+                    </div><a href="reports.html#low_attendance">View all</a>
+                </div>
+                <div id="dashboardAlerts" class="empty-state">No one below the required attendance status.Add students
+                    to see the students if any below required attendence status.</div>
+            </section>
+
+            <section class="panel" aria-labelledby="recentinputs">
+                <div class="panelrow">
+                    <p class="light">LATEST UPDATES</p>
+                    <h2 class="activityheading">Recent Activity</h2>
+                </div>
+                <div id="dashboardActivity" class="empty-state">Your recent actions will appear here..</div>
+            </section>
+        </div>
+
+        <section class="note">
+            <span class="notesymbol">ℹ️</span>
+            <p><strong>New to Stumanage??</strong>Start by adding students and courses,assign courses to students, and
+                then enter attentance state. This site for project saves the data in this browser</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Stumanage. All rights reserved.</p>
+        <p>Student Attendance & Study Tracker Project</p>
+
+    </footer>
+
+</body>
+
+</html>

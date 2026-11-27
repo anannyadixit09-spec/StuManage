@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuManage | Attendance</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body data-page="attendence">
+
+    <header class="siteheader">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Stumanage" height="100"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="study-tracker.html">Study Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page_heading">
+            <p class="light">CLASS RECORDS</p>
+            <h1>Attendance</h1>
+            <p>Enter cumulative class totals for each student and course. The attendance percentage will be calculated.
+            </p>
+        </section>
+
+        <section class="form">
+            <div class="form_title">
+                <h2 id="attendanceformheading">Update Attendance</h2>
+                <p>Assign courses to students from the courses page first.</p>
+            </div>
+
+            <form id="attendanceform" class="form_grid">
+                <label>Student: *
+                    <select id="attendanceStudent" required></select>
+                </label>
+
+                <label>Course: *
+                    <select id="attendanceCourse" required></select>
+                </label>
+
+                <label>Total classes conducted: *
+                    <input id="totalClasses" type="number" min="1" step="1" required placeholder="e.g. 23">
+                </label>
+
+                <label>Classes attended: *
+                    <input id="attendedClasses" type="number" min="0" step="1" required placeholder="e.g. 17">
+                </label>
+
+                <div class="full-width preview-row"><span>Calculated attendance</span><strong
+                        id="attendancePreview"> Enter class
+                        totals</strong></div>
+
+                <div class="form_actions full_width">
+                    <button class="button primary" type="submit" id="saveAttendanceButton">Save Attendance</button>
+                    <button class="button secondary" type="button" id="cancelAttendanceEdit" hidden>Cancel edit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel_section">
+            <div class="form_title">
+                <div>
+                    <h2>Attendance records</h2>
+                    <p>One record pr course for a student can be assigned.</p>
+                </div>
+                <span class="count_pill" id="attendancecount">0 Records</span>
+            </div>
+
+            <div class="table_wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Course</th>
+                            <th>Total classes</th>
+                            <th>Attended classes</th>
+                            <th>Missed</th>
+                            <th>Percentage</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceRows"></tbody>
+                </table>
+            </div>
+            <p id="attendanceempty" class="empty-state">No attendance records yet. Add a student, add a course, assign
+                it, then enter attendance here.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Stumanage. All rights reserved.</p>
+        <p>Student Attendance & Study Tracker Project</p>
+    </footer>
+</body>
+
+</html>
